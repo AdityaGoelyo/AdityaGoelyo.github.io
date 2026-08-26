@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Aditya Goel</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root {
+            --bg: #0a0a0a;
+            --bg-secondary: #2d332d;
+            --surface: #2B292A;
+            --text-muted: #8D878B;
+            --text: #E8E5E5;
+            --text-bright: #FAFAFA;
+            --accent: #682143;
+            --accent-dark: #3A0D0C;
+
+            --XL: 64px;
+            --L: 32px;
+        }
+
+        body {
+            background: var(--bg);
+            padding: 0;
+            margin: 0;
+            color: var(--text);
+            font-family: "Lora", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+        }
+
+        .intro {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+
+            position: sticky;
+            top: 0;
+        }
+
+        .intro_name {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            flex-grow: 1;
+        }
+
+        .intro_image {
+            display: flex;
+            height: 100vh;
+            width: auto;
+        }
+
+        .portfolio {
+            min-height: 200vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .headbar {
+            background: var(--bg-secondary);
+            display: flex;
+            flex-direction: row;
+            position: sticky;
+            top: 0vh;
+            height: 5vh;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            margin: var(--XL);
+        }
+
+        .section_heading {
+            font-size: var(--L);
+            color: var(--accent);
+        }
+
+        .cell {
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+<!--intro-->
+
+<section class = "intro">
+    <div class = "intro_name">
+        <h1 style="color: #682143; font-size: var(--XL); margin: 0;">Aditya Goel</h1>
+        <p style="color: #2d322f; font-size: var(--L); margin: 0;">Portfolio</p>
+    </div>
+    <img class="intro_image" src = "rose.jpg">
+</section>
+
+<!--some padding for animation to finish-->
+
+<div style = "height: 100vh;"></div>
+
+<!--actual portfolio-->
+
+<div class = "portfolio">
+
+    <div class = "headbar">
+    </div>
+
+    <div class = "section">
+        <div class = "section_heading">
+            <b>About me</b>
+        </div>
+        <div class = "cell">
+    </div>
+
+</div>
+
+
+
+<script>
+
+    // fading animation for the intro
+
+    const intro = document.querySelector(".intro");
+    const introName = document.querySelector('.intro_name');
+
+    window.addEventListener("scroll", () => {
+        const scroll = window.scrollY;
+        const fadeDistance = window.innerHeight;
+
+        const progress = Math.min(scroll/fadeDistance, 1)
+
+        intro.style.opacity = 1 - progress;
+
+        introName.style.transform = `translateX(-${progress * 10}vh)`;
+
+    });
+</script>
+
+</body>
+
+</html>
