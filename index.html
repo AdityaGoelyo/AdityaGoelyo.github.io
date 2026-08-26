@@ -15,15 +15,20 @@
         :root {
             --bg: #0a0a0a;
             --bg-secondary: #2d332d;
-            --surface: #2B292A;
+            --surface: #0f160d;
             --text-muted: #8D878B;
             --text: #E8E5E5;
             --text-bright: #FAFAFA;
-            --accent: #682143;
+            --accent: #7d3a5e;
             --accent-dark: #3A0D0C;
 
-            --XL: 64px;
+            --XXL: 64px;
+            --XL: 48px;
             --L: 32px;
+            --XM: 24px;
+            --M: 16px;
+            --S: 8px;
+            --XS: 4px;
         }
 
         body {
@@ -80,16 +85,26 @@
         .section {
             display: flex;
             flex-direction: column;
-            margin: var(--XL);
+            margin: var(--XXL);
         }
 
         .section_heading {
-            font-size: var(--L);
+            font-size: var(--XL);
             color: var(--accent);
         }
 
         .cell {
+            margin: var(--M);
+            font-size: var(--XM);
+            background: var(--surface);
+            border-radius: var(--M);
+            padding: var(--M);
+        }
 
+        .row_of_cells {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
         }
 
     </style>
@@ -104,7 +119,7 @@
 
 <section class = "intro">
     <div class = "intro_name">
-        <h1 style="color: #682143; font-size: var(--XL); margin: 0;">Aditya Goel</h1>
+        <h1 style="color: #682143; font-size: var(--XXL); margin: 0;">Aditya Goel</h1>
         <p style="color: #2d322f; font-size: var(--L); margin: 0;">Portfolio</p>
     </div>
     <img class="intro_image" src = "rose.jpg">
@@ -125,7 +140,11 @@
         <div class = "section_heading">
             <b>About me</b>
         </div>
-        <div class = "cell">
+        <div class = "row_of_cells">
+            <div class = "cell">Hi! I'm Aditya Goel, as aspiring AI researcher. I placed within the Top 100 Mathmematics students 
+                nationally in Madhava Mathmematics Competition 2026.</div>
+            <img src="aditya.jpg" style="height: 30vh; width:fit-content;">
+        </div>
     </div>
 
 </div>
